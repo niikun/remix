@@ -11,7 +11,7 @@ contract OnlyOwnerMintwithModifier is ERC721 {
     */
     address public owner;
 
-    constructor() ERC721("OnlyOwnerMintwithModifier", "OWNERWM") {
+    constructor() ERC721("OnlyOwnerMintwithModifier", "OWNERMOD") {
         owner = _msgSender();
     }
 
@@ -21,7 +21,7 @@ contract OnlyOwnerMintwithModifier is ERC721 {
     */
     modifier onlyOwner{
         require(
-            owner==_msgSender(),"Caller is not owner.");
+            owner == _msgSender(),"Caller is not owner.");
         _;
     }
 
